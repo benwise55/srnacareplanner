@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Format Request | SRNA Care Planner</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f5f7fa;
+    }
+
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      background: #7D0519;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 20px 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card p {
+      margin-bottom: 16px;
+      color: #4b5563;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #7D0519;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      font-weight: bold;
+      color: #111827;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #7D0519;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      width: fit-content;
+    }
+
+    .button:hover {
+      background: #5f0313;
+    }
+
+    .helper-text {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-top: -6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .site-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .site-nav.open {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="header-brand" href="index.html" aria-label="SRNA Care Planner homepage">
+      <img src="Care%20Pannner-iOS-Default-64x64@3x.png" alt="SRNA Care Planner logo" />
+    </a>
+    <div>
+      <h1>New Format Request</h1>
+      <p>If your institutions care plan tracking website is not currently supported, fill out the form below to request application updates.</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="top-nav">
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="site-nav" class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="videos.html">Videos</a>
+        <a href="new-format-request.html">New Format Request</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <a class="back-link" href="index.html">&larr; Back to home</a>
+    <div class="card">
+      <p>Application updates will be included as soon as possible.  Any contact information will be used to provide you with updates, and clarification of request if needed.</p>
+
+      <form action="https://formsubmit.co/support@srnacareplanner.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New Format Request" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <label>
+          Institution name
+          <input type="text" name="name" placeholder="Enter your name"/>
+        </label>
+
+        <label>
+          Form name
+          <input type="text" name="form_name" placeholder="Enter the form name" required />
+        </label>
+
+        <label>
+          Email address
+          <input type="email" name="email" placeholder="name@example.com"  />
+        </label>
+
+        <label>
+          Phone number
+          <input
+            type="tel"
+            name="phone"
+            inputmode="tel"
+            pattern="[0-9()\-+\s]{7,15}"
+            title="Please enter a valid phone number"
+            placeholder="(###) ###-####"
+          />
+        </label>
+        <p class="helper-text">Please enter 7–15 digits, spaces, dashes, parentheses, or a + sign.</p>
+
+        <label>
+          Preferred contact method
+          <select name="contact_method">
+            <option>Email</option>
+            <option>Phone</option>
+          </select>
+     
+        </label>
+
+        <label>
+          Any specific requests or additional details?
+          <textarea name="details" placeholder="Request details" required></textarea>
+        </label>
+
+        <label>
+          Upload a file
+          <input type="file" name="attachment" />
+        </label>
+        <p class="helper-text">Please save the form webpage and upload it. (Typically right click on the webpage, and save as file)</p>
+
+        <button class="button" type="submit">Submit Request</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Benjamin Wise. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

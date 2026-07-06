@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
+  <title>Videos | SRNA Care Planner</title>
   <style>
     * {
       box-sizing: border-box;
@@ -19,37 +19,15 @@
     }
 
     header {
-      padding: 24px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      color: #111;
-      gap: 16px;
-    }
-
-    .header-brand {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .header-brand img {
-      width: 48px;
-      height: 48px;
-      display: block;
-      border-radius: 10px;
+      padding: 50px 20px;
+      text-align: center;
+      background: #7D0519;
+      color: white;
     }
 
     header h1 {
-      font-size: 2rem;
-      margin-bottom: 4px;
-      color: #111;
-    }
-
-    header p {
-      font-size: 1rem;
-      color: #333;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
     }
 
     nav {
@@ -101,49 +79,22 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 980px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 0 20px 40px;
     }
 
-    section {
+    .card {
       background: white;
-      margin-bottom: 25px;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
-    section h2 {
-      margin-bottom: 12px;
-      color: #7D0519;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 18px;
-      background: #7D0519;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .button:hover {
-      background: #7D0519;
-    }
-
-    .button.small {
-      padding: 8px 14px;
-      font-size: 0.95rem;
-      margin-top: 12px;
-    }
-
     .videos-grid {
       display: grid;
       gap: 20px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       margin-top: 20px;
     }
 
@@ -217,8 +168,8 @@
       <img src="Care%20Pannner-iOS-Default-64x64@3x.png" alt="SRNA Care Planner logo" />
     </a>
     <div>
-      <h1>SRNA Care Planner</h1>
-      <p>Quickly create and upload care plans</p>
+      <h1>Videos</h1>
+      <p>Review short demos of the care planner workflow.</p>
     </div>
   </header>
 
@@ -238,32 +189,39 @@
   </nav>
 
   <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Quickly load anesthesia considerations for a patient's individual home medication and medical history.  Customize protocols to create plans quickly, and upload plans to clinical tracking sites.
-      </p>
-    </section>
+    <div class="card">
+      <div class="videos-grid">
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g?rel=0" title="Introduction to the care planner workflow" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Overview</h3>
+            <p>Quick overview of the app.</p>
+          </div>
+        </article>
 
-    <section id="recordings">
-      <h2>Screen Recordings</h2>
-      <a href="videos.html">Videos</a>
-      <p>
-        Review a few short walkthroughs that highlight the app’s key workflows.
-      </p>
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4?rel=0" title="Customizing protocols in the care planner" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Working with dictionaries</h3>
+            <p>Reviews basic dictionary functions for quicker plan creation.</p>
+          </div>
+        </article>
 
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: support@srnacareplanner.com
-      </p>
-      <p style="margin-top: 10px;">
-        <a class="button small" href="new-format-request.html" target="_blank" rel="noopener">New Format Request</a>
-      </p>
-    </section>
-
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ?rel=0" title="Uploading a completed care plan" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Coversheets</h3>
+            <p>This video reviews how to customize and print coversheets.</p>
+          </div>
+        </article>
+      </div>
+    </div>
   </main>
 
   <footer>

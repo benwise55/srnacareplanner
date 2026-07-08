@@ -8,23 +8,24 @@
 </head>
 <body>
   <header>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <a class="header-brand" href="index.html" aria-label="SRNA Care Planner homepage">
       <img src="Care%20Pannner-iOS-Default-64x64@3x.png" alt="SRNA Care Planner logo" />
     </a>
     <div>
       <h1>New Format Request</h1>
-      <p>If your institutions care plan tracking website is not currently supported, fill out the form below to request application updates.</p>
+      <p>Request support for a new institution/form</p>
     </div>
   </header>
 
   <nav>
     <div class="top-nav">
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <div id="site-nav" class="site-nav">
+        <button class="menu-close" aria-label="Close navigation">&times;</button>
         <a href="index.html">Home</a>
         <a href="videos.html">Videos</a>
         <a href="new-format-request.html">New Format Request</a>
@@ -107,6 +108,15 @@
         toggle.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('open');
       });
+
+      const closeButton = document.querySelector('.menu-close');
+
+      if (closeButton) {
+        closeButton.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('open');
+        });
+      }
 
       nav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {

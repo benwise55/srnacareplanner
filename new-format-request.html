@@ -28,12 +28,12 @@
         <a href="index.html">Home</a>
         <a href="videos.html">Videos</a>
         <a href="new-format-request.html">New Format Request</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <a class="back-link" href="index.html">&larr; Back to home</a>
     <div class="card">
       <p>Application updates will be included as soon as possible.  Any contact information will be used to provide you with updates, and clarification of request if needed.</p>
 
@@ -67,7 +67,6 @@
             placeholder="(###) ###-####"
           />
         </label>
-        <p class="helper-text">Please enter 7–15 digits, spaces, dashes, parentheses, or a + sign.</p>
 
         <label>
           Preferred contact method
@@ -84,10 +83,10 @@
         </label>
 
         <label>
-          Upload a file
-          <input type="file" name="attachment" />
+          Upload a saved webpage file
+          <input type="file" name="attachment" accept="text/html,application/xhtml+xml,application/vnd.ms-htmlhelp,application/x-mimearchive,.html,.htm,.mht,.mhtml" />
         </label>
-        <p class="helper-text">Please save the form webpage and upload it. (Typically right click on the webpage, and save as file)</p>
+        <p class="helper-text">Please right click and save webpage as a file so that care plan form can be autofilled out within the app</p>
 
         <button class="button" type="submit">Submit Request</button>
       </form>
@@ -114,6 +113,32 @@
           toggle.setAttribute('aria-expanded', 'false');
           nav.classList.remove('open');
         });
+      });
+    }
+
+    const requestForm = document.querySelector('form[action="https://formsubmit.co/support@srnacareplanner.com"]');
+
+    if (requestForm) {
+      requestForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(requestForm);
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/support@srnacareplanner.com', {
+            method: 'POST',
+            body: formData,
+          });
+
+          if (!response.ok) {
+            throw new Error(`Submission failed: ${response.status}`);
+          }
+
+          alert('Your request was sent successfully.');
+          requestForm.reset();
+        } catch (error) {
+          console.error(error);
+          alert('Unable to send the request right now. Please try again later.');
+        }
       });
     }
   </script>

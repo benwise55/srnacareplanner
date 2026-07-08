@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | SRNA Care Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a class="header-brand" href="index.html" aria-label="SRNA Care Planner homepage">
+        <img src="Care%20Pannner-iOS-Default-64x64@3x.png" alt="SRNA Care Planner logo" />
+      </a>
+      <div>
+        <h1>Privacy Policy</h1>
+        <p>SRNA Care Planner</p>
+      </div>
+    </header>
+
+    <nav>
+      <div class="top-nav">
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div id="site-nav" class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="videos.html">Videos</a>
+          <a href="new-format-request.html">New Format Request</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="card">
+        <h1>Privacy Policy for SRNA Care Planner</h1>
+
+        <p class="effective-date">Effective Date: May 22, 2026</p>
+
+        <p>
+          SRNA Care Planner (“the App”) respects your privacy.
+          This Privacy Policy explains how information is handled when you use the App.
+        </p>
+
+        <h2>Information Collection</h2>
+
+        <p>
+          SRNA Care Planner does <strong>not collect, store, transmit, or share any personal information or user data</strong>.
+        </p>
+
+        <p>The App:</p>
+
+        <ul>
+          <li>Does not require user accounts</li>
+          <li>Does not collect analytics data</li>
+          <li>Does not track user activity</li>
+          <li>Does not use advertising frameworks</li>
+          <li>Does not sell or share information with third parties</li>
+          <li>Does not transmit data to external servers</li>
+        </ul>
+
+        <h2>Local Data Storage</h2>
+
+        <p>
+          Any information you enter into the App is stored locally on your device only, if applicable,
+          and is not accessible to the developer.
+        </p>
+
+        <h2>Third-Party Services</h2>
+
+        <p>
+          SRNA Care Planner does not integrate with third-party analytics,
+          advertising, or data collection services.
+        </p>
+
+        <h2>Children’s Privacy</h2>
+
+        <p>
+          The App does not knowingly collect any information from children or users of any age.
+        </p>
+
+        <h2>Security</h2>
+
+        <p>
+          Because SRNA Care Planner does not collect or transmit user data,
+          there is no user information stored on external systems.
+        </p>
+
+        <h2>Changes to This Privacy Policy</h2>
+
+        <p>
+          This Privacy Policy may be updated from time to time.
+          Any updates will be reflected by revising the “Effective Date” above.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Benjamin Wise. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.site-nav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('open');
+        });
+
+        nav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            nav.classList.remove('open');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

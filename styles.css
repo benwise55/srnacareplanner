@@ -21,25 +21,35 @@ header {
   background: white;
   color: #111;
   gap: 16px;
+  position: relative;
 }
 
 .header-brand {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   text-decoration: none;
+  margin-left: auto;
+  margin-right: 0;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .header-brand img {
-  width: 48px;
-  height: 48px;
+  width: calc(50% - 12px);
+  height: auto;
+  max-height: 50%;
   display: block;
   border-radius: 10px;
 }
 
-/* Center the header text block while keeping the brand image at left */
+/* Center the header text block while leaving room for the logo on the right */
 header > div {
   flex: 1;
   text-align: center;
+  margin-right: auto;
 }
 
 header h1 {
@@ -87,17 +97,19 @@ nav {
   background: white;
   padding: 15px 20px;
   border-bottom: 1px solid #e5e7eb;
+  position: relative;
 }
 
 .top-nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .menu-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 4px;
   background: none;
@@ -105,6 +117,11 @@ nav {
   cursor: pointer;
   padding: 6px;
   margin-right: 12px;
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .menu-toggle span {
@@ -115,53 +132,50 @@ nav {
   border-radius: 999px;
 }
 
-.site-nav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
+.menu-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #7D0519;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  margin-bottom: 8px;
 }
 
-@media (max-width: 768px) {
-  .top-nav {
-    justify-content: flex-start;
-    width: 100%;
-  }
+.site-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(80vw, 280px);
+  padding: 24px 20px;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transform: translateX(-110%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  z-index: 30;
+}
 
-  .menu-toggle {
-    display: flex;
-  }
-
-  .site-nav {
-    position: absolute;
-    left: 0;
-    top: calc(100% + 8px);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 16px;
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    transform: translateX(-110%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    z-index: 20;
-  }
-
-  .site-nav.open {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
+.site-nav.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .site-nav a {
   color: #7D0519;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .site-nav a:hover {

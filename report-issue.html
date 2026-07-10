@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy | SRNA Care Planner</title>
+    <title>Report an Issue | SRNA Care Planner</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,8 +17,8 @@
         <img src="Care%20Pannner-iOS-Default-64x64@3x.png" alt="SRNA Care Planner logo" />
       </a>
       <div>
-        <h1>Privacy Policy</h1>
-        <p>SRNA Care Planner</p>
+        <h1>Report an Issue</h1>
+        <p>Submit a bug report or technical issue for support.</p>
       </div>
     </header>
 
@@ -29,6 +29,7 @@
           <a href="index.html">Home</a>
           <a href="videos.html">Videos</a>
           <a href="new-format-request.html">New Format Request</a>
+          <a href="report-issue.html">Report an Issue</a>
           <a href="support.html">Support</a>
           <a href="privacy-policy.html">Privacy Policy</a>
         </div>
@@ -37,65 +38,47 @@
 
     <main>
       <div class="card">
-        <h1>Privacy Policy for SRNA Care Planner</h1>
-
-        <p class="effective-date">Effective Date: May 22, 2026</p>
-
         <p>
-          SRNA Care Planner (“the App”) respects your privacy.
-          This Privacy Policy explains how information is handled when you use the App.
+          Use this form to report app bugs, performance problems, or any issue that prevents SRNA Care Planner from working properly.
         </p>
 
-        <h2>Information Collection</h2>
+        <form action="https://formsubmit.co/support@srnacareplanner.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Issue Report" />
+          <input type="hidden" name="_captcha" value="false" />
 
-        <p>
-          SRNA Care Planner does <strong>not collect, store, transmit, or share any personal information or user data</strong>.
-        </p>
+          <label>
+            Your name
+            <input type="text" name="name" placeholder="Enter your name" />
+          </label>
 
-        <p>The App:</p>
+          <label>
+            Email address
+            <input type="email" name="email" placeholder="name@example.com" required />
+          </label>
 
-        <ul>
-          <li>Does not require user accounts</li>
-          <li>Does not collect analytics data</li>
-          <li>Does not track user activity</li>
-          <li>Does not use advertising frameworks</li>
-          <li>Does not sell or share information with third parties</li>
-          <li>Does not transmit data to external servers</li>
-        </ul>
+          <label>
+            Issue type
+            <select name="issue_type">
+              <option>Bug</option>
+              <option>Crash</option>
+              <option>Performance issue</option>
+              <option>Feature problem</option>
+              <option>Other</option>
+            </select>
+          </label>
 
-        <h2>Local Data Storage</h2>
+          <label>
+            Description of the issue
+            <textarea name="details" placeholder="Describe the issue in detail" required></textarea>
+          </label>
 
-        <p>
-          Any information you enter into the App is stored locally on your device only, if applicable,
-          and is not accessible to the developer.
-        </p>
+          <label>
+            Attach a screenshot or file (optional)
+            <input type="file" name="attachment" accept="image/*,text/*,.txt,.log,.pdf" />
+          </label>
 
-        <h2>Third-Party Services</h2>
-
-        <p>
-          SRNA Care Planner does not integrate with third-party analytics,
-          advertising, or data collection services.
-        </p>
-
-        <h2>Children’s Privacy</h2>
-
-        <p>
-          The App does not knowingly collect any information from children or users of any age.
-        </p>
-
-        <h2>Security</h2>
-
-        <p>
-          Because SRNA Care Planner does not collect or transmit user data,
-          there is no user information stored on external systems.
-        </p>
-
-        <h2>Changes to This Privacy Policy</h2>
-
-        <p>
-          This Privacy Policy may be updated from time to time.
-          Any updates will be reflected by revising the “Effective Date” above.
-        </p>
+          <button class="button" type="submit">Submit Issue Report</button>
+        </form>
       </div>
     </main>
 

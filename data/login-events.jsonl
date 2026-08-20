@@ -1,0 +1,2 @@
+{"studentId":"student-001","resourceId":"resource-001","studentName":"Test Student","sessionId":"sess-123","success":true,"source":"web","ipAddress":null,"metadata":{},"timestamp":"2026-07-12T21:10:51.428Z","storedAt":"2026-07-12T21:10:51.428Z"}
+{"studentId":"student-002","resourceId":"resource-002","studentName":"Demo Student 2","sessionId":"sess-456","success":true,"source":"homepage-demo","ipAddress":null,"metadata":{},"timestamp":"2026-07-12T21:11:51.775Z","storedAt":"2026-07-12T21:11:51.775Z"}

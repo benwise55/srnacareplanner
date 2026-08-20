@@ -66,6 +66,13 @@
       </p>
     </section>
 
+    <section id="research-tracker">
+      <h2>Research Tracker Demo</h2>
+      <p>Send a test login event to the local tracker API.</p>
+      <button id="record-login-btn" class="button small" type="button">Record Test Login</button>
+      <p id="tracker-status" aria-live="polite"></p>
+    </section>
+
   </main>
 
   <footer>
@@ -75,6 +82,8 @@
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.site-nav');
+    const recordButton = document.getElementById('record-login-btn');
+    const trackerStatus = document.getElementById('tracker-status');
 
     if (toggle && nav) {
       toggle.addEventListener('click', () => {
@@ -97,6 +106,29 @@
           toggle.setAttribute('aria-expanded', 'false');
           nav.classList.remove('open');
         });
+      });
+    }
+
+    if (recordButton && trackerStatus) {
+      recordButton.addEventListener('click', async () => {
+        trackerStatus.textContent = 'Sending test login event...';
+        try {
+          const response = await fetch('http://localhost:3000/api/login-events', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              studentId: 'demo-student',
+              resourceId: 'demo-resource',
+              studentName: 'Demo Student',
+              sessionId: 'demo-session',
+              source: 'homepage-demo'
+            })
+          });
+          const result = await response.json();
+          trackerStatus.textContent = `Event accepted: ${result.storage}`;
+        } catch (error) {
+          trackerStatus.textContent = 'Unable to contact the local tracker API.';
+        }
       });
     }
   </script>

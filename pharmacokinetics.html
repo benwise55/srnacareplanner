@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Report an Issue | SRNA Care Planner</title>
+    <title>Pharmacokinetics | SRNA Care Planner</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,8 +17,8 @@
         <img src="Care%20Pannner-iOS-Default-64x64@3x.png" alt="SRNA Care Planner logo" />
       </a>
       <div>
-        <h1>Report an Issue</h1>
-        <p>Submit a bug report or technical issue for support.</p>
+        <h1>Pharmacokinetics</h1>
+        <p>Pharmacokinetic simulator for SRNAs to strengthen their clinical intuition.</p>
       </div>
     </header>
 
@@ -30,7 +30,6 @@
           <a href="videos.html">Videos</a>
           <a href="pharmacokinetics.html">Pharmacokinetics</a>
           <a href="new-format-request.html">New Format Request</a>
-          <a href="report-issue.html">Report an Issue</a>
           <a href="support.html">Support</a>
           <a href="privacy-policy.html">Privacy Policy</a>
         </div>
@@ -40,47 +39,21 @@
     <main>
       <div class="card">
         <p>
-          Use this form to report app bugs, performance problems, or any issue that prevents SRNA Care Planner from working properly.
+          This app is a intended as a resource for SRNAs to strengthen their pharmacokinetic intuition.  It allows students to model bolus doses and infusions.
         </p>
 
-        <form action="https://formsubmit.co/support@srnacareplanner.com" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_subject" value="Issue Report" />
-          <input type="hidden" name="_captcha" value="false" />
+        <section id="about">
+            <h2>Try it</h2>
+            <p>
+                
+            </p>
+            <p class="app-store-link-wrapper">
+                <a class="app-store-link" href="https://apps.apple.com/us/app/srna-care-planner/id6772320347?mt=12" target="_blank" rel="noopener">
+                <span aria-hidden="true"></span> View on the App Store
+                </a>
+            </p>
+        </section>
 
-          <label>
-            Your name
-            <input type="text" name="name" placeholder="Enter your name" />
-          </label>
-
-          <label>
-            Email address
-            <input type="email" name="email" placeholder="name@example.com" required />
-          </label>
-
-          <label>
-            Issue type
-            <select name="issue_type">
-              <option>Bug</option>
-              <option>Crash</option>
-              <option>Performance issue</option>
-              <option>Feature problem</option>
-              <option>Other</option>
-            </select>
-          </label>
-
-          <label>
-            Description of the issue
-            <textarea name="details" placeholder="Describe the issue in detail" required></textarea>
-          </label>
-
-          <label>
-            Attach a screenshot or file (optional)
-            <input type="file" name="attachment" accept="image/*,text/*,.txt,.log,.pdf" />
-          </label>
-
-          <button class="button" type="submit">Submit Issue Report</button>
-        </form>
-      </div>
     </main>
 
     <footer>

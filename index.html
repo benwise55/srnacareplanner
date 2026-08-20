@@ -28,6 +28,7 @@
         <button class="menu-close" aria-label="Close navigation">&times;</button>
         <a href="index.html">Home</a>
         <a href="videos.html">Videos</a>
+        <a href="pharmacokinetics.html">Pharmacokinetics</a>
         <a href="new-format-request.html">New Format Request</a>
         <a href="support.html">Support</a>
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -56,6 +57,12 @@
       </p>
     </section>
 
+    <section id="pharmacokinetics">
+      <h2>Pharmacokinetics</h2>
+      <p>Check out the pharmacokinetic simulator to strengthen your dosing intuition.</p>
+      <p><a class="button small" href="pharmacokinetics.html">Open Pharmacokinetics</a></p>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p>
@@ -64,13 +71,6 @@
       <p style="margin-top: 10px;">
         <a class="button small" href="new-format-request.html" target="_blank" rel="noopener">New Format Request</a>
       </p>
-    </section>
-
-    <section id="research-tracker">
-      <h2>Research Tracker Demo</h2>
-      <p>Send a test login event to the local tracker API.</p>
-      <button id="record-login-btn" class="button small" type="button">Record Test Login</button>
-      <p id="tracker-status" aria-live="polite"></p>
     </section>
 
   </main>
@@ -82,8 +82,6 @@
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.site-nav');
-    const recordButton = document.getElementById('record-login-btn');
-    const trackerStatus = document.getElementById('tracker-status');
 
     if (toggle && nav) {
       toggle.addEventListener('click', () => {
@@ -106,29 +104,6 @@
           toggle.setAttribute('aria-expanded', 'false');
           nav.classList.remove('open');
         });
-      });
-    }
-
-    if (recordButton && trackerStatus) {
-      recordButton.addEventListener('click', async () => {
-        trackerStatus.textContent = 'Sending test login event...';
-        try {
-          const response = await fetch('http://localhost:3000/api/login-events', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              studentId: 'demo-student',
-              resourceId: 'demo-resource',
-              studentName: 'Demo Student',
-              sessionId: 'demo-session',
-              source: 'homepage-demo'
-            })
-          });
-          const result = await response.json();
-          trackerStatus.textContent = `Event accepted: ${result.storage}`;
-        } catch (error) {
-          trackerStatus.textContent = 'Unable to contact the local tracker API.';
-        }
       });
     }
   </script>

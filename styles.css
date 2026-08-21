@@ -111,21 +111,10 @@ header p {
   max-width: 100%;
 }
 
-/* Apple's badge is a plain image, sized to match the height of the
-   Microsoft badge's "large"/"small" variants below so the two line up.
-   It also has no built-in animation option, unlike the Microsoft badge,
-   so a matching hover lift is added here. */
-.store-badges img {
-  max-width: 100%;
-  height: 106px;
-  width: auto;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.store-badges a:hover img,
-.store-badges a:focus-visible img {
-  transform: scale(1.04);
-  filter: brightness(1.08);
+/* The ms-store-badge widget renders its content ~4px lower than its own
+   box on both size variants, so nudge it up to align with the Apple badge. */
+.store-badges ms-store-badge {
+  margin-top: -7px;
 }
 
 .ms-store-badge-small {

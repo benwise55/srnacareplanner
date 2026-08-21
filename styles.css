@@ -82,16 +82,26 @@ header p {
   font-size: 0.95rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
-
-.app-store-link:hover {
-  background: #f5f5f5;
+.app-store-image-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-.app-store-link span {
-  font-size: 1.1rem;
-  line-height: 1;
+.app-store-image-link img {
+  height: 56px;
+  width: auto;
+  display: block;
 }
 
+.store-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
 /* Navigation */
 nav {
   background: white;

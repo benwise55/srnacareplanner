@@ -42,11 +42,22 @@
       <p>
         Quickly load anesthesia considerations for a patient's individual home medication and medical history.  Customize protocols to create plans quickly, and upload plans to clinical tracking sites.
       </p>
-      <p class="app-store-link-wrapper">
-        <a class="app-store-link" href="https://apps.apple.com/us/app/srna-care-planner/id6772320347?mt=12" target="_blank" rel="noopener">
-          <span aria-hidden="true"></span> View on the App Store
+      <div class="store-badges">
+        
+        <a href="https://apps.apple.com/us/app/srna-care-planner/id6772320347?itscg=30200&itsct=apps_box_badge&mttnsubad=6772320347" style="display: inline-block;">
+        <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1780444800" alt="Download on the App Store" style="width: 320px; height: 106px; vertical-align: middle; object-fit: contain;" />
         </a>
-      </p>
+        
+        <ms-store-badge
+          productid="9N3437LVRR6D"
+          window-mode="direct"
+          theme="dark"
+          size="large"
+          language="en-us"
+          animation="on">
+        </ms-store-badge>
+      </div>
+    </section>
     </section>
 
     <section id="recordings">
@@ -82,6 +93,11 @@
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.site-nav');
+
+    const msStoreBadgeScript = document.createElement('script');
+    msStoreBadgeScript.type = 'module';
+    msStoreBadgeScript.src = 'https://get.microsoft.com/badge/ms-store-badge.bundled.js';
+    document.body.appendChild(msStoreBadgeScript);
 
     if (toggle && nav) {
       toggle.addEventListener('click', () => {

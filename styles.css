@@ -111,24 +111,16 @@ header p {
   max-width: 100%;
 }
 
+/* Apple's badge is a plain image, sized to match the height of the
+   Microsoft badge's "large"/"small" variants below so the two line up. */
 .store-badges img {
   max-width: 100%;
-  height: auto;
+  height: 106px;
+  width: auto;
 }
 
-/* ms-store-badge renders its own fixed-size (~381x104px) iframe internally and
-   ignores host CSS width, so it's scaled down via transform to a fixed footprint
-   that fits on phone screens instead of forcing the whole page to overflow. */
-.ms-store-badge-wrap {
-  width: 176px;
-  height: 48px;
-  overflow: hidden;
-}
-
-.ms-store-badge-wrap ms-store-badge {
-  display: block;
-  transform: scale(0.462);
-  transform-origin: top left;
+.ms-store-badge-small {
+  display: none;
 }
 /* Navigation */
 nav {
@@ -437,6 +429,18 @@ footer {
 
   header p {
     font-size: 0.9rem;
+  }
+
+  .store-badges img {
+    height: 44px;
+  }
+
+  .ms-store-badge-large {
+    display: none;
+  }
+
+  .ms-store-badge-small {
+    display: block;
   }
 
   .site-nav {

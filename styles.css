@@ -112,11 +112,20 @@ header p {
 }
 
 /* Apple's badge is a plain image, sized to match the height of the
-   Microsoft badge's "large"/"small" variants below so the two line up. */
+   Microsoft badge's "large"/"small" variants below so the two line up.
+   It also has no built-in animation option, unlike the Microsoft badge,
+   so a matching hover lift is added here. */
 .store-badges img {
   max-width: 100%;
   height: 106px;
   width: auto;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.store-badges a:hover img,
+.store-badges a:focus-visible img {
+  transform: scale(1.04);
+  filter: brightness(1.08);
 }
 
 .ms-store-badge-small {
@@ -400,6 +409,17 @@ textarea {
   font-size: 0.95rem;
   color: #6b7280;
   margin-top: -6px;
+}
+
+.preview-screenshot {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 footer {

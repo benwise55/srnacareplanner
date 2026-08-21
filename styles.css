@@ -38,9 +38,8 @@ header {
 }
 
 .header-brand img {
-  width: calc(50% - 12px);
-  height: auto;
-  max-height: 50%;
+  width: 56px;
+  height: 56px;
   display: block;
   border-radius: 10px;
 }
@@ -50,6 +49,8 @@ header > div {
   flex: 1;
   text-align: center;
   margin-right: auto;
+  padding-left: 44px;
+  padding-right: 76px;
 }
 
 header h1 {
@@ -98,9 +99,36 @@ header p {
 
 .store-badges {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
   margin-top: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.store-badges > * {
+  max-width: 100%;
+}
+
+.store-badges img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ms-store-badge renders its own fixed-size (~381x104px) iframe internally and
+   ignores host CSS width, so it's scaled down via transform to a fixed footprint
+   that fits on phone screens instead of forcing the whole page to overflow. */
+.ms-store-badge-wrap {
+  width: 176px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.ms-store-badge-wrap ms-store-badge {
+  display: block;
+  transform: scale(0.462);
+  transform-origin: top left;
 }
 /* Navigation */
 nav {
@@ -398,6 +426,19 @@ footer {
     display: inline-flex;
   }
 
+  header > div {
+    padding-left: 44px;
+    padding-right: 64px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
   .site-nav {
     display: none;
     flex-direction: column;
@@ -411,5 +452,11 @@ footer {
 
   .site-nav.open {
     display: flex;
+  }
+}
+
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 1.25rem;
   }
 }

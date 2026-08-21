@@ -30,6 +30,7 @@
           <a href="videos.html">Videos</a>
           <a href="pharmacokinetics.html">Pharmacokinetics</a>
           <a href="new-format-request.html">New Format Request</a>
+          <a href="report-issue.html">Report an Issue</a>
           <a href="support.html">Support</a>
           <a href="privacy-policy.html">Privacy Policy</a>
         </div>
@@ -87,33 +88,6 @@
       <p>&copy; 2026 Benjamin Wise. All rights reserved.</p>
     </footer>
 
-    <script>
-      const toggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.site-nav');
-
-      if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-          const expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          nav.classList.toggle('open');
-        });
-
-        const closeButton = document.querySelector('.menu-close');
-
-        if (closeButton) {
-          closeButton.addEventListener('click', () => {
-            toggle.setAttribute('aria-expanded', 'false');
-            nav.classList.remove('open');
-          });
-        }
-
-        nav.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            toggle.setAttribute('aria-expanded', 'false');
-            nav.classList.remove('open');
-          });
-        });
-      }
-    </script>
+    <script src="nav.js" defer></script>
   </body>
 </html>

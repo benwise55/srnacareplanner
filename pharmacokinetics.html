@@ -30,6 +30,7 @@
           <a href="videos.html">Videos</a>
           <a href="pharmacokinetics.html">Pharmacokinetics</a>
           <a href="new-format-request.html">New Format Request</a>
+          <a href="report-issue.html">Report an Issue</a>
           <a href="support.html">Support</a>
           <a href="privacy-policy.html">Privacy Policy</a>
         </div>
@@ -43,48 +44,53 @@
         </p>
 
         <section id="about">
-            <h2>Try it</h2>
-            <p>
-                
-            </p>
-            <p class="app-store-link-wrapper">
-                <a class="app-store-link" href="https://apps.apple.com/us/app/srna-care-planner/id6772320347?mt=12" target="_blank" rel="noopener">
-                <span aria-hidden="true"></span> View on the App Store
-                </a>
-            </p>
-        </section>
+            <h2>Coming Soon</h2>
+            <p>Sign up to be notified when the pharmacokinetic simulator is released.</p>
 
+            <form action="https://formsubmit.co/support@srnacareplanner.com" method="POST">
+              <input type="hidden" name="_subject" value="Pharmacokinetics Notify Me Signup" />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <label>
+                Email or phone number
+                <input type="text" name="contact" placeholder="name@example.com or (###) ###-####" required />
+              </label>
+
+              <button class="button" type="submit">Notify Me</button>
+            </form>
+        </section>
+      </div>
     </main>
 
     <footer>
       <p>&copy; 2026 Benjamin Wise. All rights reserved.</p>
     </footer>
 
+    <script src="nav.js" defer></script>
     <script>
-      const toggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.site-nav');
+      const notifyForm = document.querySelector('form[action="https://formsubmit.co/support@srnacareplanner.com"]');
 
-      if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-          const expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          nav.classList.toggle('open');
-        });
+      if (notifyForm) {
+        notifyForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const formData = new FormData(notifyForm);
 
-        const closeButton = document.querySelector('.menu-close');
+          try {
+            const response = await fetch('https://formsubmit.co/ajax/support@srnacareplanner.com', {
+              method: 'POST',
+              body: formData,
+            });
 
-        if (closeButton) {
-          closeButton.addEventListener('click', () => {
-            toggle.setAttribute('aria-expanded', 'false');
-            nav.classList.remove('open');
-          });
-        }
+            if (!response.ok) {
+              throw new Error(`Submission failed: ${response.status}`);
+            }
 
-        nav.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            toggle.setAttribute('aria-expanded', 'false');
-            nav.classList.remove('open');
-          });
+            alert('Thanks! We will notify you when this feature launches.');
+            notifyForm.reset();
+          } catch (error) {
+            console.error(error);
+            alert('Unable to submit right now. Please try again later.');
+          }
         });
       }
     </script>

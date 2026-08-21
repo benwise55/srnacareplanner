@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SRNA Care Planner</title>
   <link rel="stylesheet" href="styles.css">
+  <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
 </head>
 <body>
   <header>
@@ -30,6 +31,7 @@
         <a href="videos.html">Videos</a>
         <a href="pharmacokinetics.html">Pharmacokinetics</a>
         <a href="new-format-request.html">New Format Request</a>
+        <a href="report-issue.html">Report an Issue</a>
         <a href="support.html">Support</a>
         <a href="privacy-policy.html">Privacy Policy</a>
       </div>
@@ -44,20 +46,21 @@
       </p>
       <div class="store-badges">
         
-        <a href="https://apps.apple.com/us/app/srna-care-planner/id6772320347?itscg=30200&itsct=apps_box_badge&mttnsubad=6772320347" style="display: inline-block;">
-        <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1780444800" alt="Download on the App Store" style="width: 320px; height: 106px; vertical-align: middle; object-fit: contain;" />
+        <a href="https://apps.apple.com/us/app/srna-care-planner/id6772320347?itscg=30200&itsct=apps_box_badge&mttnsubad=6772320347">
+        <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1780444800" alt="Download on the App Store" width="320" height="106" />
         </a>
         
-        <ms-store-badge
-          productid="9N3437LVRR6D"
-          window-mode="direct"
-          theme="dark"
-          size="large"
-          language="en-us"
-          animation="on">
-        </ms-store-badge>
+        <div class="ms-store-badge-wrap">
+          <ms-store-badge
+            productid="9N3437LVRR6D"
+            window-mode="direct"
+            theme="dark"
+            size="large"
+            language="en-us"
+            animation="on">
+          </ms-store-badge>
+        </div>
       </div>
-    </section>
     </section>
 
     <section id="recordings">
@@ -90,38 +93,6 @@
     <p>&copy; 2026 Benjamin Wise. All rights reserved.</p>
   </footer>
 
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.site-nav');
-
-    const msStoreBadgeScript = document.createElement('script');
-    msStoreBadgeScript.type = 'module';
-    msStoreBadgeScript.src = 'https://get.microsoft.com/badge/ms-store-badge.bundled.js';
-    document.body.appendChild(msStoreBadgeScript);
-
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-
-      const closeButton = document.querySelector('.menu-close');
-
-      if (closeButton) {
-        closeButton.addEventListener('click', () => {
-          toggle.setAttribute('aria-expanded', 'false');
-          nav.classList.remove('open');
-        });
-      }
-
-      nav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          toggle.setAttribute('aria-expanded', 'false');
-          nav.classList.remove('open');
-        });
-      });
-    }
-  </script>
+  <script src="nav.js" defer></script>
 </body>
 </html>
